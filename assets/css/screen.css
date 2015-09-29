@@ -1,0 +1,278 @@
+/* ==========================================================================
+   0. Normalize.css v2.1.3 | MIT License | git.io/normalize | (minified)
+   ========================================================================== */
+
+article, aside, details,
+figcaption, figure,
+footer, header, hgroup,
+main, nav, section,
+summary { display: block; }
+audio, canvas, video { display: inline-block; }
+audio:not([controls]) { display: none; height: 0; }
+[hidden], template { display: none; }
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body { margin: 0; }
+a { background: transparent; }
+a:focus { outline: thin dotted; }
+a:active, a:hover { outline: 0; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: 700; }
+dfn { font-style: italic; }
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+mark { background: #FF0; color: #000; }
+code, kbd, pre,
+samp { font-family: monospace, serif; font-size: 1em; }
+pre { white-space: pre-wrap; }
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+small { font-size: 80%; }
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+img { border: 0; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend { border: 0; padding: 0; }
+button, input, select,
+textarea { font-family: inherit; font-size: 100%; margin: 0; }
+button, input { line-height: normal; }
+button, select { text-transform: none; }
+button, html input[type="button"],
+input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled], html input[disabled] { cursor: default; }
+input[type="checkbox"],
+input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner,
+input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html, body { min-height: 100%; font-size: 16px; }
+
+body {
+  height: 100%;
+  max-height: 100%;
+  color: #424242;
+  position: relative;
+  /*color: #6A7175;*/
+  font-family: "Open Sans", arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* elements */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0rem;
+  text-transform: none;
+}
+
+h1 { font-size: 1.25rem; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1.25rem; }
+
+p { font-size: 0.875rem; }
+
+a { color: inherit; text-decoration: none;}
+a:hover { color: #3495d1}
+a:visited {}
+
+/* lists */
+ol,
+ul,
+ol ul,
+ol ol,
+ul ol,
+ul ul { padding: 0 }
+
+@media (min-width:640px){
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.5rem; }
+  h5 { font-size: 1.5rem; }
+  h6 { font-size: 1.5rem; }
+
+  p { font-size: 1rem; }
+}
+
+
+/* ==========================================================================
+   site
+   ========================================================================== */
+
+.site.-container {
+
+}
+.site-header.-inner {
+
+}
+.site-main.-inner {
+
+}
+.site-footer.-inner {
+
+}
+.site-footer { padding:0.875rem; position: absolute; bottom: 0; left: 0; }
+.site-footer .copyright { font-size: 0.625rem; }
+
+
+/* ==========================================================================
+   Ghost context {{body_class}}
+
+   Each page in a Ghost theme belongs to a context. The context can be determined by the URL, 
+   and tells you which template will be used, what data will be available to output and what 
+   will be output by the {{body_class}} helper.
+
+   Documentation: http://themes.ghost.org/docs/context-overview
+   ========================================================================== */
+
+.home-template,
+.archive-template {}
+.post-template {}
+.tag-template {}
+
+@media (min-width:640px){
+  .home-template .post-title,
+  .archive-template .post-title {
+    /*margin-left: -1rem;*/
+  }
+}
+
+
+/* ==========================================================================
+   Ghost post context
+
+   Whenever you're viewing a single blog post, you're in the post context. 
+   The post context is not set on static pages, which uses the page context instead.
+
+   Documentation: http://themes.ghost.org/docs/post-context
+   ========================================================================== */
+
+.post {}
+.post-header {}
+.post-title {
+  font-size: 2.875rem;
+  font-family: 'Playfair Display', serif; /* #secondary-font */
+  font-weight: 400;
+}
+
+ul.postIndex { list-style-type: none; }
+.postIndex-li {
+  padding: 3rem 0;
+}
+.postIndex-li+.postIndex-li { border-top: 1px solid #f0f2f4; }
+.postIndex-inner {
+  margin: 0 auto;
+  max-width: 550px;
+  /*padding: 0 2rem;*/
+  /*padding: 1rem 2rem;*/
+}
+/* postIndex .post */
+.postIndex .post { 
+  padding: 0 2rem;
+}
+.postIndex .post-header { }
+.postIndex .post-title {
+  font-size: 2rem;
+}
+.postIndex .post-meta {
+  color: #909090;
+  font-size: 0.75rem;
+  position: relative;
+}
+.postIndex .author-thumb {
+  border-radius: 100%;
+  display: none;
+  width: 50px;
+  position: absolute;
+  left: -5em;
+  top: 0.5em;
+}
+.postIndex .post:hover a {
+  color: #3495d1; /* $link-color */
+}
+
+.post {}
+.post-header {}
+.post-title {}
+
+@media (min-width:640px){
+
+  .postIndex .post-header {
+    margin-left: -1.5em;  
+  }
+  .postIndex .post-meta {
+    font-size: 0.875rem;
+  }
+  .postIndex .author-thumb {
+    display: block;
+  }
+}
+
+
+/* ==========================================================================
+   pagination
+
+   {{pagination}} is a template driven helper which outputs HTML for 'newer posts'
+   and 'older posts' links if they are available and also says which page you are on.
+
+   Documentation: http://themes.ghost.org/docs/pagination
+   ========================================================================== */
+
+.pagination {
+  border-top: 1px solid #f0f2f4;
+  padding: 3rem 0;
+  text-align: center;
+}
+.pagination .page-number {
+  display: block;
+}
+.pagination-btn {
+  display: inline-block;
+  font-family: 'Playfair Display', serif; /* #secondary-font */
+  font-weight: 400;
+  text-align: center;
+}
+.pagination-btn-text,
+.pagination-btn-arrow {
+  display: block;
+}
