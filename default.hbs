@@ -16,16 +16,16 @@
 
   {{! Styles'n'Scripts }}
   <link rel='stylesheet' type='text/css' href='{{asset 'css/screen.css'}}' />
-  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' >
-  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Playfair+Display:400'>
-  <link rel='stylesheet' type='text/css' href='{{asset 'highlightjs/styles/default.css'}}' >
-
+  <link rel='stylesheet' type='text/css' href='{{asset 'fonts/font-awesome-4.4.0/css/font-awesome.min.css'}}' />
+  <link rel='stylesheet' type='text/css' href='{{asset 'js/highlightjs/styles/default.css'}}' >
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' />
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Playfair+Display:400' />
 
  
   {{! Ghost outputs important style and meta data with this tag }}
   {{ghost_head}}
 </head>
-<body class="{{body_class}} nav-closed">
+<body class="{{body_class}} nav-closed animate-fadeIn">
 
   {{navigation}}
 
@@ -44,8 +44,9 @@
   {{ghost_foot}}
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="{{asset "js/jquery-2.1.4.min.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-  <script type="text/javascript" src="{{asset "highlightjs/highlight.pack.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/highlightjs/highlight.pack.js"}}"></script>
   {{! The main JavaScript file for essentials }}
   <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 

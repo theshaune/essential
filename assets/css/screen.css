@@ -88,7 +88,7 @@ body {
   max-height: 100%;
   color: #424242;
   position: relative;
-  /*color: #6A7175;*/
+  color: #6A7175;
   font-family: "Open Sans", arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
@@ -99,7 +99,10 @@ img { max-width: 100% }
 
 /* elements */
 h1, h2, h3, h4, h5, h6 {
+  color: #424242;
+  font-weight: 400;
   margin: 2em 0 1rem 0;
+  margin: 0;
   text-transform: none;
 }
 
@@ -112,8 +115,8 @@ h6 { font-size: 1.25rem; }
 
 p { font-size: 0.875rem; }
 
-a { color: inherit; text-decoration: none; transition: color 0.3s ease;}
-a:hover { color: #3495d1}
+a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: #3495d1; }
 a:visited {}
 
 /* lists */
@@ -121,7 +124,9 @@ ol, ul { padding-left: 2.5rem; }
 ol ol, ul ul,
 ul ol, ol ul { margin: 0 0 0.4em 0; padding-left: 2em; }
 
+pre { margin-left: -1rem; margin-right: -1rem; }
 code { padding: 0.25em; background: #f0f0f0; }
+code.hljs { padding: 1rem; }
 
 hr {
   display: block;
@@ -134,7 +139,7 @@ hr {
 
 blockquote p{
   font-family: 'Playfair Display', serif;
-  font-weight: 400;
+  /*font-weight: 400;*/
   font-size: 1.25rem;
   margin: 2em 0;
   position: relative;
@@ -179,8 +184,27 @@ blockquote p::before{
 
 }
 .site-footer { padding:0.875rem; position: absolute; bottom: 0; left: 0; }
-.site-footer .copyright { font-size: 0.625rem; }
+.site-footer .copyright { font-size: 0.625rem; opacity: 0.5; }
 
+
+
+/* ==========================================================================
+   site
+   ========================================================================== */
+
+.nav {}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1rem; 
+}
+.nav-menu {
+  align-self: center;
+}
+.nav-title { margin: 1rem 0; }
+.nav ul li { display: inline-block; }
 
 /* ==========================================================================
    Ghost context {{body_class}}
@@ -222,6 +246,11 @@ blockquote p::before{
 }
 .post-header {}
 .post-content { }
+.post-footer {
+  border-top: 1px solid #f0f2f4;
+  margin-top: 3rem;
+  padding: 3rem 0;
+}
 .post-image { 
   background-repeat: no-repeat;
   background-position: center;
@@ -232,7 +261,7 @@ blockquote p::before{
 .post-title {
   font-family: 'Playfair Display', serif; /* #secondary-font */
   /*font-size: 2rem;*/
-  font-weight: 400;
+  /*font-weight: 400;*/
   margin: 0;
 }
 
@@ -270,7 +299,8 @@ ul.postIndex { list-style-type: none; padding: 0 }
 /* post-template */
 .post-template .post {}
 .post-template .post-content {}
-.post-template .post-header { max-width: 900px; }
+.post-template .post-meta { opacity: 0.5; }
+.post-template .post-header { max-width: 900px; margin-top: 35vh; margin-bottom: 7vh}
 .post-template .post-title { margin-bottom:2rem ;}
 
 @media (min-width:640px){
@@ -287,6 +317,70 @@ ul.postIndex { list-style-type: none; padding: 0 }
   .postIndex .author-thumb {
     display: block;
   }
+}
+
+/* author */
+.author {
+  font-size: 0.875rem;
+}
+.author h4 { font-size: 0.875rem; font-size: 1rem; }
+.author p { font-size: 0.875rem; }
+.author-image { float: left; margin-right: 1.5rem; }
+.author-image-img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+.author-content {
+  overflow: hidden;
+}
+
+.author-content >:last-child { margin-bottom: 0 }
+.author-meta {}
+
+@media (min-width:640px){
+  .author-content {
+    padding-right: calc(50px + 2rem); 
+  } 
+}
+
+/* comments */
+.comments {}
+.comments h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+}
+.comments a { padding: 1rem; }
+.comments {
+  text-align: center;
+  border-top: 1px solid #f0f2f4;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+/* share */
+.share { 
+  border-top: 1px solid #f0f2f4;
+  /*margin-top: 2rem;*/
+  padding-top: 2rem;
+  text-align: center;
+}
+.share h4 {
+  display: block;
+  font-size: .750rem;
+  /* font-size: 1rem; */
+  margin-bottom: 0.25rem;
+  opacity: .5;
+}
+.share a { 
+  display: inline-block;
+  font-size: 1.25rem;
+  margin: 0.25rem 0.5rem; 
+  padding: 0.5rem; 
+  vertical-align: middle;
 }
 
 
@@ -313,7 +407,7 @@ ul.postIndex { list-style-type: none; padding: 0 }
 .pagination-btn {
   display: inline-block;
   font-family: 'Playfair Display', serif; /* #secondary-font */
-  font-weight: 400;
+  /*font-weight: 400;*/
   font-size: 1.25rem;
   text-align: center;
 }
@@ -324,13 +418,65 @@ ul.postIndex { list-style-type: none; padding: 0 }
 /* page specific */
 .page-pagination { border-top: 1px solid #f0f2f4; }
 .page-pagination .newer-posts { display: none; }
-/* On page2+ show extra pagination controls at the top of post list */
+/* extra pagination controls at the top of post list */
 .extra-pagination { border-bottom: 1px solid #f0f2f4; }
 .extra-pagination .page-number { display: none; }
 .extra-pagination .older-posts { display: none; }
 .extra-pagination { display: none; }
+/* On page2+ show extra pagination controls at the top of post list */
 .archive-template .extra-pagination { display: block; }
 
 
 /*body:not(.paged) .extra-pagination { display: none; }*/
-/*.paged .pagination.-extra .older-posts { display: block; }
+/*.paged .pagination.-extra .older-posts { display: block; } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hidden {display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* test development */
+.animate-fadeIn {
+  /*opacity: 0;*/
+  transition: all 750ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+.animate-fadeIn.ani-complete {
+  opacity: 1;
+}
+
+.post-image {
+  -webkit-transform: translate3d(0,0,0);
+  transition: all 750ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transform: translateY(25px);
+  /*opacity: 0;*/
+}
+.post-image.animate-in {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  /*opacity: 1;*/
+}

@@ -20,6 +20,10 @@
             $("body").toggleClass("nav-opened nav-closed");
         });
 
+        $('.post-image').addClass('animate-in');
+        $('body').addClass('ani-complete');
+        
+
     });
 
     // Arctic Scroll by Paul Adam Davis
@@ -54,3 +58,34 @@
 
     };
 })(jQuery);
+
+
+
+$(document).ready(function() {
+
+  $('.show-comments').on('click', function(e){
+    // e.preventDefault();
+    // $(this).hide();
+    // $('.disqus_thread').show();
+  });
+
+});
+
+$(document).ready(function() {
+    $('.show-comments').on('click', function(e){
+
+        e.preventDefault();
+
+          var disqus_shortname = 'theme-place'; // Replace this value with *your* username.
+
+          // ajax request to load the disqus javascript
+          $.ajax({
+                  type: "GET",
+                  url: "http://" + disqus_shortname + ".disqus.com/embed.js",
+                  dataType: "script",
+                  cache: true
+          });
+          // hide the button once comments load
+          $(this).fadeOut();
+    });
+});
