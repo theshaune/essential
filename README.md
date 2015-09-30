@@ -6,8 +6,10 @@ Author [Theme Place](http://theme.place)
 To download, visit the [releases](https://github.com/TryGhost/Casper/releases) page.
 
 
-## Supported Plugins
+## Included Plugins
 - disqus
+- [highlight.js](https://highlightjs.org), [Usage Guide](https://highlightjs.org/usage/), [Live Demo](https://highlightjs.org/static/demo/).
+  highlight.js is located in the `assets/highlightjs/` directory, and initialized on line 45 in `assets/js/index.js`
 - jQuery
 
 

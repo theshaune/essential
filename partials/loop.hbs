@@ -8,7 +8,7 @@
   <ul class="postIndex">
     {{#foreach posts}}
     <li class="postIndex-li">
-      <article class="postIndex-inner {{post_class}}">
+      <article class="{{post_class}} post-wrap">
         <header class="post-header">
           <div class="post-meta">
             <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
@@ -20,12 +20,10 @@
           </div>
           <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
         </header>
-          <section class="post-excerpt">
-              <p>{{excerpt words="42"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-          </section>
-          <footer class="post-meta">
-              
-          </footer>
+        <section class="post-excerpt">
+          <p>{{excerpt words="42"}}&hellip;</p>
+          <a class="post-cta" href="{{url}}">Read More &raquo;</a>
+        </section>
       </article>
     {{/foreach}}
   </ul>
