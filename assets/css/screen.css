@@ -138,6 +138,7 @@ hr {
 }
 
 blockquote p{
+  color: #424242;
   font-family: 'Playfair Display', serif;
   /*font-weight: 400;*/
   font-size: 1.25rem;
@@ -456,7 +457,8 @@ ul.postIndex { list-style-type: none; padding: 0 }
 
 
 
-
+.animate-fadeOut { opacity: 1 }
+.animate-fadeOut.js-complete { opacity: 0 }
 
 
 

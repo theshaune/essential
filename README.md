@@ -7,11 +7,13 @@ To download, visit the [releases](https://github.com/TryGhost/Casper/releases) p
 
 
 ## Included Plugins
-- [disqus](http://disqus.com)
+- [disqus](http://disqus.com).
+  disqus is lazy loaded on the post page, this helps keep your website fast.
+  To enable disqus on your website, sign up on [disqus](http://disqus.com) and follow the instructions to create your account.
+  Enter your disqus shortcode, open `assets/js/index.js` and modify `var disqus_shortname = 'your-user-name-here'`.
 
 
 - [highlight.js](https://highlightjs.org), [Usage Guide](https://highlightjs.org/usage/), [Live Demo](https://highlightjs.org/static/demo/).
-
   highlight.js is located in the `assets/js/highlightjs/` directory, and initialized on line 45 in `assets/js/index.js`
 
 - [Google Fonts](http://www.google.com/webfonts)
