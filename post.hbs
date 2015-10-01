@@ -59,24 +59,7 @@
       </div>
       {{/author}}
 
-      <section class="comments">
-        <h4 class="show-comments"><a href="#">Read Comments</a></h4>
-        <div class="">
-          <div id="disqus_thread" class="/ post-wrap"></div>
-        </div>
-        <script type="text/javascript">
-          /* * * CONFIGURATION VARIABLES * * */
-          // var disqus_shortname = 'theme-place';
-          
-          // /* * * DON'T EDIT BELOW THIS LINE * * */
-          // (function() {
-          //   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          //   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          //   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          // })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      </section>
+      {{>comments}}
 
       <section class="share">
         <h4>Share this post</h4>
