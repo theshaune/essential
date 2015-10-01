@@ -4,7 +4,6 @@
 
 /* globals jQuery, document */
 (function ($, undefined) {
-    "use strict";
 
     var $document = $(document);
 
@@ -63,12 +62,12 @@
 
 $(document).ready(function() {
 
-  $('.show-comments').on('click', function(e){
-    // e.preventDefault();
-    // $(this).hide();
-    // $('.disqus_thread').show();
+  $('.burger, .burger span, .site-menu-wrap, .site-menu-wrap-inner').on('click', function(e){
+    if(e.target != this) return;
+    e.preventDefault();
+    $('.site-menu').toggleClass('js-show');
+    $('.burger').toggleClass('js-active');
   });
-
 });
 
 $(document).ready(function() {
@@ -89,3 +88,5 @@ $(document).ready(function() {
           $(this).fadeOut();
     });
 });
+
+
