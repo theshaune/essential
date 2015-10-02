@@ -82,23 +82,25 @@
   </article>
 </main>
 
-<aside class="read-next">
+<aside class="readNext">
     {{#next_post}}
-    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+{{!--     <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
         <section class="post">
             <h2>{{title}}</h2>
             <p>{{excerpt words="19"}}&hellip;</p>
         </section>
-    </a>
+    </a> --}}
     {{/next_post}}
-    {{#prev_post}}
-    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/prev_post}}
+  {{#prev_post}}
+  <a class="readNext-link" href="{{url}}">
+    <section class="readNext-content">
+      {{!-- <div class="readNext-image" {{#if image}}style="background-image: url({{image}}){{else}}no-cover{{/if}}"></div> --}}
+      <span class="readNext-hint">Read Next Article</span>
+      <h4 class="readNext-title">{{title}}</h4>
+      <span class="readNext-icon">&darr;</span>
+    </section>
+  </a>
+  {{/prev_post}}
 </aside>
 
 {{/post}}

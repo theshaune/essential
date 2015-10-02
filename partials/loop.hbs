@@ -1,15 +1,11 @@
-{{! Previous/next page links - only displayed on page 2+ }}
-<div class="extra-pagination inner">
-    {{pagination}}
-</div>
-
 {{! This is the post loop - each post will be output using this markup }}
-<div class="site-main -inner">
+{{!-- <div class="site-main -inner"> --}}
   <ul class="postIndex">
     {{#foreach posts}}
     <li class="postIndex-li">
-      <article class="{{post_class}} post-wrap">
-        <header class="post-header">
+      <article class="{{post_class}} ">
+        {{!-- section --}}
+        <header class="post-header post-wrap">
           <div class="post-meta">
             <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
             <span class="post-author">Written by {{author }}</span>
@@ -20,14 +16,22 @@
           </div>
           <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
         </header>
-        <section class="post-excerpt">
-          <p>{{excerpt words="42"}}&hellip;</p>
+        {{!-- section --}}
+        {{#if featured}}
+        <div style="width: 100%; height: 50px; overflow: hidden; background: pink">
+          {{!-- <img src="{{image}}"> --}}
+          <div class="post-image" style="background-image: url('{{image}}')"></div>
+        </div>
+        {{/if}}
+        {{!-- section --}}
+        <section class="post-excerpt post-wrap">
+          <p>{{excerpt characters="300"}}&hellip;</p>
           <a class="post-cta" href="{{url}}">Read More &raquo;</a>
         </section>
       </article>
     {{/foreach}}
   </ul>
-</div>
+{{!-- </div> --}}
 
 {{! Previous/next page links - displayed on every page }}
 <div class="page-pagination inner">

@@ -15,13 +15,15 @@
   <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
   {{! Styles'n'Scripts }}
-  <link rel='stylesheet' type='text/css' href='{{asset 'css/screen.css'}}' />
+  {{!-- <link rel='stylesheet' type='text/css' href='{{asset 'css/screen.css'}}' /> --}}
   <link rel='stylesheet' type='text/css' href='{{asset 'fonts/font-awesome-4.4.0/css/font-awesome.min.css'}}' />
   <link rel='stylesheet' type='text/css' href='{{asset 'js/highlightjs/styles/default.css'}}' >
   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' />
   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Playfair+Display:400' />
 
- 
+
+  <link rel='stylesheet/less' type='text/css' href='{{asset 'css/screen.less'}}' />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js" ></script>
   {{! Ghost outputs important style and meta data with this tag }}
   {{ghost_head}}
 </head>
