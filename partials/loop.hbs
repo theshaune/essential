@@ -12,10 +12,10 @@
               {{#if featured}}
               {{#if author.image}}<img class="post-snippet-author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
               {{/if}}
-              <time class="page-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-              <span class="page-descriptive">by</span>
-              <a    class="page-author" href="/author/{{author.slug}}" rel="author">{{author.name }}</a>
-              <span class="page-tags">{{tags prefix=" on "}}</span>
+              <time class="page-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="Do MMMM YYYY"}}</time>
+              {{!-- <span class="page-descriptive">by</span> --}}
+              {{!-- <a    class="page-author" href="/author/{{author.slug}}" rel="author">{{author.name }}</a> --}}
+              {{!-- <span class="page-tags">{{tags prefix=" on "}}</span> --}}
             </div>
             <h1><a href="{{url}}">{{{title}}}</a></h1>
           </div>
