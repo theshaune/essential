@@ -1,31 +1,56 @@
 {{!< default}}
-
-{{! This is a page template. A page outputs content just like any other post, and has all the same
-    attributes by default, but you can also customise it to behave differently if you prefer. }}
-
-{{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {{/if}}
-    </nav>
-</header>
-
 <main class="content" role="main">
-    <article class="{{post_class}}">
+  <article class="{{post_class}}">
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-        </header>
+    <header  class="page-header">
+      <div   class="page-header-inner">
+        <div   class="page-header-wrap">
+          {{!-- <div class="page-meta">
+            <time class="page-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+            <span class="page-descriptive">Written by</span>
+            <a    class="page-author" href="/author/{{author.slug}}" rel="author">{{author.name}}</a>
+            <span class="page-tags">{{tags prefix=" on "}}</span>
+          </div> --}}
+          <h1>{{{title}}}</h1>
+        </div>
+      </div>
+    </header>
 
-        <section class="post-content">
-            {{content}}
-        </section>
+    {{#if image}}
+    <div class="post-image" style="background-image: url({{image}})"></div>
+    {{else}}
+    <div class="ui-divider"></div>
+    {{/if}}
 
-    </article>
+    <section class="post-content">
+      <div class="post-content-wrap">
+        {{content}}
+      </div>
+    </section>
+
+    <footer class="post-footer">
+
+      <section class="post-share">
+        {{!-- <h4>Share this post</h4> --}}
+        <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <span class="hidden">Twitter</span>
+        </a>
+        <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <span class="hidden">Facebook</span>
+        </a>
+        <a class="fa fa-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <span class="hidden">Google+</span>
+        </a>
+      </section>
+
+    </footer>
+
+  </article>
 </main>
+
 {{/post}}

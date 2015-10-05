@@ -99,7 +99,7 @@ $(document).ready(function() {
     fade: function(){
       var $logo = $('#logo');
       var pageHeaderHeight = $('.page-header').height();
-      var opacity =  (( pageHeaderHeight )-($("body").scrollTop() * 1.35 ) ) /  (pageHeaderHeight) * 1 ;
+      var opacity =  (( pageHeaderHeight )-($("body").scrollTop() * 1.5 ) ) /  (pageHeaderHeight) * 1 ;
       if (opacity < -0.15 ){
         $logo.addClass("js-hide");
         $logo.css("opacity", 0);

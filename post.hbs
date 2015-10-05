@@ -6,8 +6,6 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-
-
 <main class="content" role="main">
   <article class="{{post_class}}">
 
@@ -96,26 +94,20 @@
 </main>
 
 <aside class="readNext">
-    {{#next_post}}
-{{!--     <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a> --}}
-    {{/next_post}}
+{{!--   {{#next_post}}
+  {{/next_post}} --}}
   {{#prev_post}}
-  <a class="readNext-link" href="{{url}}">
+  {{!-- <a class="readNext-link" href="{{url}}"> --}}
     <section class="readNext-content">
       {{!-- <div class="readNext-image" {{#if image}}style="background-image: url({{image}}){{else}}no-cover{{/if}}"></div> --}}
       <span class="readNext-hint">Read Next Article</span>
-      <h4 class="readNext-title">{{title}}</h4>
-      <span class="readNext-icon">&rarr;</span>
+      <h4 class="readNext-title">
+        <a class="readNext-link" href="{{url}}">{{title}}<span class="readNext-icon">&darr;</span><a>
+      </h4>
+      
     </section>
-  </a>
+  {{!-- </a> --}}
   {{/prev_post}}
 </aside>
 
 {{/post}}
-
-

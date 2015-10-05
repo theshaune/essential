@@ -171,6 +171,7 @@ body {
   height: 100%;
   line-height: 1.5;
   max-height: 100%;
+  padding-bottom: 2.5rem;
 }
 
 ol, ul { padding-left: 2.5rem; }
@@ -392,7 +393,7 @@ code.hljs { padding: 1rem; }
 
 
 .site-menu {
-  background-color: rgba(0,0,0, 0.97);
+  background-color: rgba(0,0,0, 0.95);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -531,7 +532,16 @@ code.hljs { padding: 1rem; }
     margin-top: 2rem;
     margin-bottom: 3rem;
   }
+  &-image .archive-template {
+    display: none;
+  }
 }
+.archive-template {
+  .page {
+    &-image { padding-top: 25vh; }
+  }
+}
+
 
 /* Media Queries */
 @media (min-width:@screen-md){
@@ -728,11 +738,69 @@ code.hljs { padding: 1rem; }
   }
 }
 
-
 .post-excerpt {
-  padding-left: 2em;
+  padding: 0 3rem 0 2rem;
+}
+
+
+/* .read-next */
+.readNext {
+  border-top: 1px solid @color-breaker;
+  color: @color-brand-alpha;
+  margin-top: 2rem;
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+.readNext-title {
+  .font-alpha;
+}
+.readNext-hint {
+  color: lighten(@color-typography,25%);
+  display: block;
+  font-size: @font-size-micro;
+}
+.readNext-icon {
+  display: block;
 }
 
 
 
+/* ==========================================================================
+   pagination
+
+   {{pagination}} is a template driven helper which outputs HTML for 'newer posts'
+   and 'older posts' links if they are available and also says which page you are on.
+
+   Documentation: http://themes.ghost.org/docs/pagination
+   ========================================================================== */
+
+.pagination {
+  border-top: 1px solid @color-breaker;
+  color: @color-brand-alpha;
+  margin-top: 3rem;
+  padding: 3rem 0 2rem;
+  position: relative;
+  text-align: center;
+ .page-number {
+    color: lighten(@color-typography,25%);
+    display: block;
+    font-size: @font-size-micro;
+    vertical-align: middle;
+  }
+}
+
+.pagination-btn{
+  .font-alpha;
+  position: absolute;
+  // font-size: 1.25rem; 
+  top: 47.0%;
+}
+.pagination-older-posts {
+    left: 50%;
+    margin-left: 4rem;
+}
+.pagination-newer-posts {
+    right: 50%;
+    margin-right: 4rem;
+}
 

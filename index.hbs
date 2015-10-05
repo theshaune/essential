@@ -33,11 +33,17 @@
     </div>
   </header>
 
+  {{^is "paged"}}
   {{#if @blog.image}}
   <div class="page-image" style="background-image: url({{@blog.image}})"></div>
   {{else}}
   <div class="ui-divider"></div>
   {{/if}}
+  {{/is}}
+  {{#is "paged"}}
+  <div class="ui-divider"></div>
+  {{/is}}
+
 {{!--   {{#if @blog.image}}
   <div class="post-image" style="background-image: url({{@blog.image}})"></div>
   {{/if} --}}
