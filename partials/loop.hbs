@@ -1,31 +1,34 @@
 {{! This is the post loop - each post will be output using this markup }}
 {{!-- <div class="site-main -inner"> --}}
-  <ul class="postIndex">
+  {{!-- <ul class="postIndex {{#unless @blog.image}}page-no-image{{/unless}}"> --}}
+  <ul class="post-index / page-no-image">
     {{#foreach posts}}
-    <li class="postIndex-li">
+    <li class="post-index-li">
       <article class="{{post_class}} ">
         {{!-- section --}}
-        <header class="post-header post-wrap">
-          <div class="post-meta">
-            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-            <span class="post-author">Written by {{author }}</span>
-            <span class="post-tags">{{tags prefix=" on "}}</span>
-            {{#if featured}}
-            {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
-            {{/if}}
+        <header  class="post-snippet-header">
+          <div   class="post-snippet-header-wrap">
+            <div class="post-snippet-meta">
+              {{#if featured}}
+              {{#if author.image}}<img class="post-snippet-author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
+              {{/if}}
+              <time class="page-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+              <span class="page-descriptive">Written by</span>
+              <a    class="page-author" href="/author/{{author.slug}}" rel="author">{{author.name}}</a>
+              <span class="page-tags">{{tags prefix=" on "}}</span>
+            </div>
+            <h1><a href="{{url}}">{{{title}}}</a></h1>
           </div>
-          <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
         </header>
         {{!-- section --}}
         {{#if featured}}
-        <div style="width: 100%; height: 50px; overflow: hidden; background: pink">
-          {{!-- <img src="{{image}}"> --}}
-          <div class="post-image" style="background-image: url('{{image}}')"></div>
-        </div>
+        {{#if image}}
+        {{!-- <div class="post-image" style="background-image: url({{image}})"></div> --}}
+        {{/if}}
         {{/if}}
         {{!-- section --}}
-        <section class="post-excerpt post-wrap">
-          <p>{{excerpt characters="300"}}&hellip;</p>
+        <section class="post-excerpt post-snippet-wrap">
+          <p>{{excerpt words="31"}}&hellip;</p>
           <a class="post-cta" href="{{url}}">Read More &raquo;</a>
         </section>
       </article>

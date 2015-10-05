@@ -11,58 +11,71 @@
 <main class="content" role="main">
   <article class="{{post_class}}">
 
-    <header class="post-header / post-wrap">
-      <div class="post-meta">
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        <span class="post-author">Written by {{author }}</span>
-        <span class="post-tags">{{tags prefix=" on "}}</span>
-        {{#if featured}}
-        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
-        {{/if}}
+    <header  class="page-header">
+      <div   class="page-header-inner">
+        <div   class="page-header-wrap">
+          <div class="page-meta">
+            <time class="page-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+            <span class="page-descriptive">Written by</span>
+            <a    class="page-author" href="/author/{{author.slug}}" rel="author">{{author.name}}</a>
+            <span class="page-tags">{{tags prefix=" on "}}</span>
+          </div>
+          <h1>{{{title}}}</h1>
+        </div>
       </div>
-      <h1 class="post-title">{{{title}}}</h1>
     </header>
 
+    {{#if image}}
+    <div class="post-image" style="background-image: url({{image}})"></div>
+    {{else}}
+    <div class="ui-divider"></div>
+    {{/if}}
 
-    <div class="post-image {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}"></div>
-
-    <section class="post-content post-wrap">
+    <section class="post-content">
+      <div class="post-content-wrap">
         {{content}}
+      </div>
     </section>
 
     <footer class="post-footer">
-
-      {{! Everything inside the #author tags pulls data from the author }}
       {{#author}}
-      <div class="author / post-wrap">
-        {{#if image}}
-        <figure class="author-image">
-          <a class="author-image-img" href="{{url}}" style="background-image: url({{image}})">
+      <div class="post-author">
+        <div class="post-author-wrap">
+          {{#if image}}
+          <a class="post-author-image" href="{{url}}" style="background-image: url({{image}})">
             <span class="hidden">{{name}}'s Picture</span>
           </a>
-        </figure>
-        {{/if}}
-
-        <section class="author-content">
-          <h4><a href="{{url}}">{{name}}</a></h4>
-          <div class="author-meta">
-            {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-            {{#if website}}<span class="author-link icon-link"><a href="{{website}}">Twitter</a></span>{{/if}}
-          </div>
-          {{#if bio}}
-              <p>{{bio}}</p>
-          {{else}}
-              <p>Read <a href="{{url}}">more posts</a> by this author.</p>
           {{/if}}
 
-        </section>
+          <section class="post-author-content">
+            <h4><a href="{{url}}">{{name}}</a></h4>
+            <div class="author-meta">
+              {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+              {{#if website}}<span class="author-link icon-link"><a href="{{website}}">Twitter</a></span>{{/if}}
+            </div>
+            {{#if bio}}
+                <p>{{bio}}</p>
+            {{else}}
+                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+            {{/if}}
+
+          </section>
+        </div>
       </div>
       {{/author}}
 
-      {{>comments}}
+      <section class="post-comments">
+        {{!-- <div   class="post-comments-wrap"> --}}
+          <h4 class="show-comments"><a href="#">Read Comments</a></h4>
+          <div class="post-comments-wrap">
+            <div id="disqus_thread" class="/ post-wrap"></div>
+          </div>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        {{!-- </div> --}}
+      </section>
 
-      <section class="share">
-        <h4>Share this post</h4>
+      <section class="post-share">
+        {{!-- <h4>Share this post</h4> --}}
         <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
           <span class="hidden">Twitter</span>
@@ -97,7 +110,7 @@
       {{!-- <div class="readNext-image" {{#if image}}style="background-image: url({{image}}){{else}}no-cover{{/if}}"></div> --}}
       <span class="readNext-hint">Read Next Article</span>
       <h4 class="readNext-title">{{title}}</h4>
-      <span class="readNext-icon">&darr;</span>
+      <span class="readNext-icon">&rarr;</span>
     </section>
   </a>
   {{/prev_post}}

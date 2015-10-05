@@ -30,10 +30,6 @@
 
 <body class="{{body_class}} nav-closed animate-fadeIn">
 
-
-  {{!-- <div class="site-clickShield"></div> --}}
-
-  <div class="site-page"></div>
   {{navigation}}
 
   <div class="site-wrapper">
@@ -41,8 +37,8 @@
     {{! Everything else gets inserted here }}
     {{{body}}}
 
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; developed with &hearts; by <a href="http://theme.place">themeplace</a> </section>
+    <footer class="site-footer">
+        <section class="site-footer-copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; developed with &hearts; by <a href="http://theme.place">themeplace</a> </section>
     </footer>
 
   </div>
@@ -50,6 +46,7 @@
   {{! Ghost outputs important scripts and data with this tag }}
   {{ghost_foot}}
 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="{{asset "js/jquery-2.1.4.min.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>

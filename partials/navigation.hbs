@@ -1,32 +1,26 @@
-<div class="nav">
-  <h3 class="nav-title"><a href="{{@blog.url}}"><img src="{{@blog.logo}}"></a></h3>
-{{!--   <ul class="nav-menu">
-    <li>
-        <a href="#">
-         <span class="hidden">Menu</span
-        </a>
-    <li>
-      <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
-
-  </ul> --}}
-    <a class="burger" href="#">
+<div class="site-navigation">
+  <div class="site-navigation-wrap">
+    <a class="site-navigation-brand" id="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+    <a  class="site-navigation-burger" href="#">
       <span></span>
     </a>
+  </div>
 </div>
 
 <nav class="site-menu" {{#if @blog.image}}style="background-image: url({{@blog.image}}){{/if}}">
   <div class="site-menu-wrap">
-    <div class="site-menu-wrap-inner">
-      <ul class="site-menu-ul">
-        <li>
-          <h2>{{@blog.description}}</h2>
-        {{#foreach navigation}}
-        <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
-        {{/foreach}}
-      </ul>
-    </div>
+    <ul class="site-menu-ul">
+      <li>
+        <h4>{{@blog.description}}</h4>
+      {{#foreach navigation}}
+      <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+      {{/foreach}}
+    </ul>
   </div>
 </nav>
+
+
+
 
 {{!-- <div class="nav">
     <h3 class="nav-title">Menu</h3>
